@@ -6,9 +6,17 @@ body {
 }
 
 .image {
-  width: 50vmin;
+  width: 42vmin;
   position: absolute;
   transform: translate(-50%, -50%);
+}
+
+.sto-landscape {
+  width: 65vmin;
+}
+
+.raptor-paddles {
+  width: 70vmin;
 }
 
 .image[data-status="inactive"] {
@@ -75,6 +83,7 @@ body.menu-toggled > .meta-link > span {
 .footer{
   height: auto;
   font-size: 1.2rem;
+  font-family:  "Syncopate";
   width: 100%;
   z-index: 1000;
   display: flex;

@@ -20,7 +20,7 @@ const distanceFromLast = (x, y) => {
 
 const handleOnMove = e => {
   if(distanceFromLast(e.clientX, e.clientY) > (window.innerWidth / 12)) {
-    footerCounter.textContent = `${(globalIndex + 1) % 24}/24`
+    footerCounter.textContent = `${(globalIndex % 24 + 1 )}/24`
     const lead = images[globalIndex % images.length],
           tail = images[(globalIndex - 5) % images.length];
 
@@ -35,3 +35,13 @@ const handleOnMove = e => {
 window.onmousemove = e => handleOnMove(e);
 
 window.ontouchmove = e => handleOnMove(e.touches[0]);
+
+
+window.addEventListener('load', () => {
+    const inners = document.querySelectorAll('.slide-up-inner');
+    inners.forEach((inner, index) => {
+        setTimeout(() => {
+        inner.classList.add('visible');
+        }, index * 75);
+    });
+});
